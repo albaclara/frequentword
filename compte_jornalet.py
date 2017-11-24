@@ -4,13 +4,11 @@
 # par Eve Séguier
 # Le but de ce programme est de calculer pour chaque dialecte la frequence des mots du corpus occitan jornalet 
 # composé d'articles stockés dans le répertoire articles_segmentes
+
 import re
 import csv
 import os
 import html
-
-#from Biblio.fct_divers import *
-#from Biblio.fct_segmentation import *
 
 # initialisation
 mots = {}
@@ -36,7 +34,7 @@ for article in os.listdir(RepArticles+'/'+dialecte+'/'):
 		
 # écriture du résultat dans le fichier csv
 frequence =  open(FicResult, "w", encoding='utf-8')
-
+frequence.write('"Nb total occurences : ",'+str(nboccurences)+"\n")
 for key,value in mots.items() :
     frequence.write('"'+key+'",'+str(value)+"\n")
-print("Nb total d'occurences : "+str(nboccurences))
+	
