@@ -11,13 +11,18 @@ import html
 
 from Biblio.fct_divers import *
 from Biblio.fct_segmentation import *
+
+# initialisation
 mots = {}
 nboccurences = 0
+RepArticles = 'articles_segmentes/jornalet/'
+dialecte = "LA"
+FicResult = 'frequence.csv'
 
 # calcul de la fréquence de chaque mot
-for article in os.listdir('articles_segmentes/jornalet/LA/'):
+for article in os.listdir(RepArticles+'/'+dialecte+'/'):
 	
-    with open('articles_segmentes/jornalet/LA/'+article, newline='', encoding='utf-8') as fichier:
+    with open(RepArticles+'/'+dialecte+'/'+article, newline='', encoding='utf-8') as fichier:
         
         for line in fichier:
             nboccurences +=1;
@@ -30,7 +35,7 @@ for article in os.listdir('articles_segmentes/jornalet/LA/'):
         fichier.close()
 		
 # écriture du résultat dans le fichier csv
-frequence =  open("frequence.csv", "w", encoding='utf-8')
+frequence =  open(FicResult, "w", encoding='utf-8')
 
 for key,value in mots.items() :
     frequence.write(key+","+str(value)+"\n")
