@@ -9,14 +9,14 @@ import csv
 import os
 import html
 
-from Biblio.fct_divers import *
-from Biblio.fct_segmentation import *
+#from Biblio.fct_divers import *
+#from Biblio.fct_segmentation import *
 
 # initialisation
 mots = {}
 nboccurences = 0
 RepArticles = 'articles_segmentes/jornalet/'
-dialecte = "LA"
+dialecte = "LI"
 FicResult = 'frequence.csv'
 
 # calcul de la fréquence de chaque mot
@@ -38,5 +38,5 @@ for article in os.listdir(RepArticles+'/'+dialecte+'/'):
 frequence =  open(FicResult, "w", encoding='utf-8')
 
 for key,value in mots.items() :
-    frequence.write(key+","+str(value)+"\n")
-print(nboccurences)
+    frequence.write('"'+key+'",'+str(value)+"\n")
+print("Nb total d'occurences : "+str(nboccurences))
