@@ -1,6 +1,6 @@
 # -*-coding:Utf-8 -*
 #compte_jornalet.py
-#créé le: 01/10/2017
+#créé le: 25/11/2017
 # par Eve Séguier
 # Le but de ce programme est de calculer pour chaque dialecte la frequence des mots du corpus occitan jornalet 
 # composé d'articles stockés dans le répertoire articles_segmentes
